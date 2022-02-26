@@ -14,12 +14,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-API_KEYS="$HOME/.API_KEYS.sh"
-if [ -f "$API_KEYS" ]; then
-	source $API_KEYS
-fi
-
-ALIAS="$HOME/.alias.sh"
+ALIAS="./alias.sh"
 if [ -f "$ALIAS" ]; then
        source $ALIAS
 fi
