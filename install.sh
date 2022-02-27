@@ -1,1 +1,1 @@
-ln -s ~/code/dotfiles/zsh/zshrc ~/.zshrc
+ln -s "$PWD/zsh/zshrc" "$HOME/.zshrc" 
