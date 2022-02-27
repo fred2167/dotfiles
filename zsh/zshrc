@@ -14,7 +14,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-ALIAS="$PWD/zsh/alias.sh"
+ALIAS="$HOME/code/dotfiles/zsh/alias.sh"
 if [ -f "$ALIAS" ]; then
        source $ALIAS
 fi
