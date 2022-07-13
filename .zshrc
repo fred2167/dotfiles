@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 eval "$(direnv hook zsh)"
-export ZSHTOOLS=$HOME/.zsh
+ZSHTOOLS=$HOME/dotfiles/.zsh
 # enable power prompt
 source $ZSHTOOLS/powerlevel10k/powerlevel10k.zsh-theme
 
