@@ -6,12 +6,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 eval "$(direnv hook zsh)"
-ZSHTOOLS=$HOME/dotfiles/.zsh
+DOTFILES=$HOME/dotfiles
+ZSHTOOLS=$DOTFILES/.zsh
 # enable power prompt
 source $ZSHTOOLS/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f $HOME/dotfiles/.p10k.zsh ]] || source $HOME/dotfiles/.p10k.zsh
+[[ ! -f $DOTFILES/.p10k.zsh ]] || source $DOTFILES/.p10k.zsh
 
 # enable zsh syntax highlight
 source $ZSHTOOLS/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
@@ -22,7 +23,7 @@ source $ZSHTOOLS/zsh-autosuggestions/zsh-autosuggestions.zsh
 export EDITOR="vim"
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-ALIAS="$ZSHTOOLS/.alias.sh"
+ALIAS="$DOTFILES/.alias.sh"
 if [ -f "$ALIAS" ]; then
        source $ALIAS
 fi
