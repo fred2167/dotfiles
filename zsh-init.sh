@@ -7,4 +7,5 @@ git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions $TOOLS/zsh-
 git clone --depth=1 https://github.com/zdharma-continuum/fast-syntax-highlighting $TOOLS/fast-syntax-highlighting
 
 # create soft link for zshrc at home directory
-ln -s $TOOLS/.zshrc $HOME/.zshrc
+ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
+ln -s $HOME/dotfiles/.vimrc $HOME/.vimrc

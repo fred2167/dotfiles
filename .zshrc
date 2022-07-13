@@ -11,7 +11,7 @@ ZSHTOOLS=$HOME/dotfiles/.zsh
 source $ZSHTOOLS/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f $ZSHTOOLS/.p10k.zsh ]] || source $ZSHTOOLS/.p10k.zsh
+[[ ! -f $HOME/dotfiles/.p10k.zsh ]] || source $HOME/dotfiles/.p10k.zsh
 
 # enable zsh syntax highlight
 source $ZSHTOOLS/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
