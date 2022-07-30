@@ -3,4 +3,4 @@ alias grep="grep --color=auto"
 alias refresh=". ~/.zshrc"
 alias q=exit
 alias la="ls -a"
-alias sparsepull="git fetch origin; git rebase origin/main; git-bzl refresh"
+alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"

@@ -20,6 +20,7 @@ source $ZSHTOOLS/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 # enable zsh autosuggestions
 source $ZSHTOOLS/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+bindkey -v
 export EDITOR="vim"
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
