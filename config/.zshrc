@@ -8,6 +8,9 @@ fi
 #enable automatic load enviroment variable
 eval "$(direnv hook zsh)"
 
+PATH=$PATH:~/dotfiles/bin
+PATH=$PATH:~/dotfiles/bin/uber
+
 DOTFILES=$HOME/dotfiles
 ZSHTOOLS=$DOTFILES/zsh
 CONFIGS=$HOME/dotfiles/config

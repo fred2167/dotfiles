@@ -1,0 +1,19 @@
+#!/bin/bash 
+
+if [ $# -eq 0 ]
+then 
+  version=0
+else
+  version=$1
+fi
+
+NAME="fredc/itest/$version"
+echo "pushing to remote branch $NAME"
+echo "slate env $NAME"
+
+#git push -u origin $NAME
+#slate env create --name $NAME
+#slate service deploy --service amd-api --branch $NAME 
+#slate test run --uri test://marketplace-platform/amd/amd-api/all-transport-session-test-case
+#sleep 30
+#git push origin --delete $NAME 
