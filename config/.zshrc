@@ -5,14 +5,18 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+#enable automatic load enviroment variable
 eval "$(direnv hook zsh)"
+
 DOTFILES=$HOME/dotfiles
 ZSHTOOLS=$DOTFILES/.zsh
+CONFIGS=$HOME/dotfiles/config
+
 # enable power prompt
 source $ZSHTOOLS/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f $DOTFILES/.p10k.zsh ]] || source $DOTFILES/.p10k.zsh
+[[ ! -f $CONFIGS/.p10k.zsh ]] || source $CONFIGS/.p10k.zsh
 
 # enable zsh syntax highlight
 source $ZSHTOOLS/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
@@ -24,7 +28,7 @@ bindkey -v
 export EDITOR="vim"
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-ALIAS="$DOTFILES/.alias.sh"
+ALIAS="$CONFIGS/.alias.sh"
 if [ -f "$ALIAS" ]; then
        source $ALIAS
 fi
@@ -37,5 +41,3 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
-
-##
