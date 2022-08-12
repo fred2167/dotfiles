@@ -1,6 +1,6 @@
 # install zsh powerlevel 10k, sytax-highlight, autosuggestion
 TOOLS="$HOME/dotfiles/zsh"
-if [ ! -f $TOOLS ]; then 
+if [ ! -d $TOOLS ]; then 
 mkdir zsh
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git  $TOOLS/powerlevel10k
