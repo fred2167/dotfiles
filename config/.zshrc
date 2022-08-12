@@ -9,7 +9,7 @@ fi
 eval "$(direnv hook zsh)"
 
 DOTFILES=$HOME/dotfiles
-ZSHTOOLS=$DOTFILES/.zsh
+ZSHTOOLS=$DOTFILES/zsh
 CONFIGS=$HOME/dotfiles/config
 
 # enable power prompt
