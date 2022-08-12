@@ -14,7 +14,9 @@ CONFIGS=$HOME/dotfiles/config
 
 #add my scripts to path
 PATH=$PATH:$DOTFILES/bin
+if [ -d "$DOTFILES/bin/uber" ]; then
 PATH=$PATH:"$DOTFILES/bin/uber"
+fi
 
 
 # enable power prompt
