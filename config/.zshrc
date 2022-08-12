@@ -8,12 +8,14 @@ fi
 #enable automatic load enviroment variable
 eval "$(direnv hook zsh)"
 
-PATH=$PATH:~/dotfiles/bin
-PATH=$PATH:~/dotfiles/bin/uber
-
 DOTFILES=$HOME/dotfiles
 ZSHTOOLS=$DOTFILES/zsh
 CONFIGS=$HOME/dotfiles/config
+
+#add my scripts to path
+PATH=$PATH:$DOTFILES/bin
+PATH=$PATH:"$DOTFILES/bin/uber"
+
 
 # enable power prompt
 source $ZSHTOOLS/powerlevel10k/powerlevel10k.zsh-theme
@@ -27,12 +29,14 @@ source $ZSHTOOLS/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 # enable zsh autosuggestions
 source $ZSHTOOLS/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# bind zsh command line to vim
 bindkey -v
+
 export EDITOR="vim"
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 ALIAS="$CONFIGS/.alias.sh"
-if [ -f "$ALIAS" ]; then
+if [ -f $ALIAS ]; then
        source $ALIAS
 fi
 
