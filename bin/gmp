@@ -6,6 +6,7 @@ gmp () {
 	git checkout main
 	git pull
 	git checkout $branch
+	git rebase
 }
 
 gmp
