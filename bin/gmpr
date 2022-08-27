@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gmp () {
+gmpr () {
 
 	branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 	git checkout main
@@ -9,4 +9,4 @@ gmp () {
 	git rebase
 }
 
-gmp
+gmpr
