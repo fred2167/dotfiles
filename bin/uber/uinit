@@ -1,4 +1,4 @@
-init (){
+uinit (){
 	cd ~/go-code
 	git pull
 	arc cascade
@@ -6,4 +6,4 @@ init (){
 	make setup
 	make test
 }
-init
+uinit
