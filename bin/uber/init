@@ -1,0 +1,9 @@
+init (){
+	cd ~/go-code
+	git pull
+	arc cascade
+	cd ~/go-code/src/code.uber.internal/amd/amd-api
+	make setup
+	make test
+}
+init
