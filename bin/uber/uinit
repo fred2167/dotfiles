@@ -2,7 +2,6 @@ uinit (){
 	cd ~/go-code
 	git pull
 	arc cascade
-	arc tidy
 	cd ~/go-code/src/code.uber.internal/amd/amd-api
 	make setup
 	make test
