@@ -1,0 +1,6 @@
+#!/bin/bash
+
+ufmt() {
+	files=$(git diff --name-only HEAD main)
+}
+ufmt
