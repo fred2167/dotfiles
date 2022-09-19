@@ -3,10 +3,12 @@
 ufmt() {
 	upstream_branch=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})
 	change_files=$(git diff --name-only HEAD $upstream_branch | grep .go | sed 's|src|'$GOPATH'/src|g')
-	echo "Formatting following files:"
+	echo "Formatting following files, Press enter to continue..."
 	echo "$change_files" | sed 's|'$GOPATH'||g'
+	read
 	echo $change_files | xargs gofmt -w
 	echo $change_files | xargs goimports -w
+	echo "Done formatting......"
 
 }
 ufmt
