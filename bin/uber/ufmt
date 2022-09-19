@@ -1,6 +1,10 @@
 #!/bin/bash
 
 ufmt() {
-	files=$(git diff --name-only HEAD main)
+	upstream_branch=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})
+	change_files=$(git diff --name-only HEAD $upstream_branch | grep .go | sed 's|src|'$HOME'/go-code/src|g')
+	echo $change_files | xargs gofmt -w
+	echo $change_files | xargs goimports -w
+
 }
 ufmt
