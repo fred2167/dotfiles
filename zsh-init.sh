@@ -14,3 +14,5 @@ fi
 # create soft link for rc  at home directory
 ln -s $HOME/dotfiles/config/.zshrc $HOME/.zshrc
 ln -s $HOME/dotfiles/config/.vimrc $HOME/.vimrc
+
+mkdir -p $HOME/dotfiles/vim/plugged
