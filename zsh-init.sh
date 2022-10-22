@@ -5,7 +5,7 @@ mkdir zsh
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git  $TOOLS/powerlevel10k
 git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions $TOOLS/zsh-autosuggestions
-git clone --depth=1 https://github.com/zdharma-continuum/fast-syntax-highlighting $TOOLS/fast-syntax-highlighting
+git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git $TOOLS/zsh-syntax-highlighting
 git clone --depth=1 https://github.com/zsh-users/zsh-history-substring-search $TOOLS/zsh-history-substring-search 
 git clone --depth=1 https://github.com/MichaelAquilina/zsh-you-should-use.git $TOOLS/zsh-you-should-use
 git clone --depth=1 https://github.com/MichaelAquilina/zsh-auto-notify.git $TOOLS/zsh-auto-notify

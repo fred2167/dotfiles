@@ -20,7 +20,7 @@ fi
 
 # enable zsh plugins
 source $ZSHTOOLS/powerlevel10k/powerlevel10k.zsh-theme
-source $ZSHTOOLS/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $ZSHTOOLS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $ZSHTOOLS/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSHTOOLS/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $ZSHTOOLS/zsh-you-should-use/you-should-use.plugin.zsh
