@@ -35,6 +35,8 @@ bindkey -v
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
+AUTO_NOTIFY_IGNORE+=()
+
 export EDITOR="vim"
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
