@@ -35,6 +35,7 @@ bindkey -v
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
+# disable auto notify based on commands
 AUTO_NOTIFY_IGNORE+=()
 
 export EDITOR="vim"
