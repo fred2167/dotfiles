@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 #enable automatic load enviroment variable
-eval "$(direnv hook zsh)"
+#eval "$(direnv hook zsh)"
 
 DOTFILES=$HOME/dotfiles
 ZSHTOOLS=$DOTFILES/zsh
@@ -18,21 +18,20 @@ if [ -d "$DOTFILES/bin/uber" ]; then
 PATH=$PATH:"$DOTFILES/bin/uber"
 fi
 
-
-# enable power prompt
+# enable zsh plugins
 source $ZSHTOOLS/powerlevel10k/powerlevel10k.zsh-theme
+source $ZSHTOOLS/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $ZSHTOOLS/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSHTOOLS/zsh-history-substring-search/zsh-history-substring-search.zsh
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $CONFIGS/.p10k.zsh ]] || source $CONFIGS/.p10k.zsh
 
-# enable zsh syntax highlight
-source $ZSHTOOLS/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-
-# enable zsh autosuggestions
-source $ZSHTOOLS/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 # bind zsh command line to vim
 bindkey -v
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 export EDITOR="vim"
 export LSCOLORS=ExFxBxDxCxegedabagacad
