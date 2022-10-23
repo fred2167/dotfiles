@@ -9,13 +9,13 @@ fi
 #eval "$(direnv hook zsh)"
 
 DOTFILES=$HOME/dotfiles
-ZSHTOOLS=$DOTFILES/zsh
+ZSHTOOLS=$DOTFILES/zsh/bin
 CONFIGS=$HOME/dotfiles/config
 
 #add my scripts to path
-PATH=$PATH:$DOTFILES/bin
-if [ -d "$DOTFILES/bin/uber" ]; then
-PATH=$PATH:"$DOTFILES/bin/uber"
+PATH=$PATH:$DOTFILES/cml/bin
+if [ -d "$DOTFILES/cml/bin/uber" ]; then
+PATH=$PATH:"$DOTFILES/cml/bin/uber"
 fi
 
 # enable zsh plugins
