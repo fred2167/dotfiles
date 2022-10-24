@@ -1,6 +1,6 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-mdkdir $SCRIPT_DIR/bin
+mkdir $SCRIPT_DIR/bin
 cd $SCRIPT_DIR/bin
 
 cat $SCRIPT_DIR/list.txt | xargs -I % git clone --depth=1 %
