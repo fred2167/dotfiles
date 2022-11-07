@@ -59,13 +59,10 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 
 open_with_fzf() {
-    fd -t f -H -I | fzf | xargs -ro code 
+    fd -t f -H -I | fzf | xargs -ro code
 }
-# open_with_fzf() {
-#     fd -t f -H -I | fzf -m --preview="xdg-mime query default {}" | xargs -ro -d "\n" xdg-open 2>&-
-# }
 cd_with_fzf() {
-    cd $HOME && cd "$(fd -t d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)" 
+    cd $HOME && cd "$(fd -t d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview")"
 }
 
 zle -N cd_with_fzf cd_with_fzf
