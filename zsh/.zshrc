@@ -30,6 +30,7 @@ source $ZSHTOOLS/zsh-auto-notify/auto-notify.plugin.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $CONFIGS/.p10k.zsh ]] || source $CONFIGS/.p10k.zsh
 
+
 # bind zsh command line to vim
 bindkey -v
 bindkey '^[[A' history-substring-search-up
@@ -55,3 +56,16 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+
+open_with_fzf() {
+    fd -t f -H -I | fzf -m --preview="xdg-mime query default {}" | xargs -ro -d "\n" xdg-open 2>&-
+}
+cd_with_fzf() {
+    cd $HOME && cd "$(fd -t d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)" 
+}
+
+zle -N cd_with_fzf cd_with_fzf
+zle -N open_with_fzf open_with_fzf
+bindkey ^F cd_with_fzf
+bindkey ^O open_with_fzf
