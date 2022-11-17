@@ -41,7 +41,7 @@ AUTO_NOTIFY_IGNORE+=(fzf rg)
 
 export EDITOR="vim"
 export LSCOLORS=ExFxBxDxCxegedabagacad
-export FZF_DEFAULT_COMMAND='fd'
+
 
 ALIAS="$CONFIGS/.alias.sh"
 if [ -f $ALIAS ]; then
