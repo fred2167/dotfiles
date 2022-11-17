@@ -11,6 +11,7 @@ fi
 DOTFILES=$HOME/dotfiles
 ZSHTOOLS=$DOTFILES/zsh/bin
 CONFIGS=$HOME/dotfiles/config
+MACHINES=$DOTFILES/machines
 
 #add my scripts to path
 PATH=$PATH:$DOTFILES/cml/bin
@@ -68,3 +69,18 @@ zle -N cd_with_fzf cd_with_fzf
 zle -N open_with_fzf open_with_fzf
 bindkey ^F cd_with_fzf
 bindkey ^O open_with_fzf
+
+# enable machine specific config
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine="Linux";;
+    Darwin*)    machine="Mac";;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
+
+if [[ $machine = "Linux" ]]
+then
+    source $MACHINES/linux-init.sh
+else
+    source $MACHINES/mac-init.sh
+fi
