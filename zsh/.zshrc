@@ -57,19 +57,6 @@ export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
-
-open_with_fzf() {
-    fd -t f -H -I | fzf --multi | xargs -ro code
-}
-cd_with_fzf() {
-    cd $HOME && cd "$(fd -t d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview")"
-}
-
-zle -N cd_with_fzf cd_with_fzf
-zle -N open_with_fzf open_with_fzf
-bindkey ^F cd_with_fzf
-bindkey ^O open_with_fzf
-
 # enable machine specific config
 unameOut="$(uname -s)"
 case "${unameOut}" in
@@ -84,3 +71,15 @@ then
 else
     source $MACHINES/mac-init.sh
 fi
+
+open_with_fzf() {
+    fd -t f -H -I | fzf --multi | xargs -ro code
+}
+cd_with_fzf() {
+    cd $HOME && cd "$(fd -t d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview")"
+}
+
+zle -N cd_with_fzf cd_with_fzf
+zle -N open_with_fzf open_with_fzf
+bindkey ^F cd_with_fzf
+bindkey ^O open_with_fzf
