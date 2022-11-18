@@ -35,6 +35,8 @@ source $ZSHTOOLS/zsh-you-should-use/you-should-use.plugin.zsh
 bindkey -v
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
 
 # disable auto notify based on commands
 AUTO_NOTIFY_IGNORE+=(fzf rg)
