@@ -33,22 +33,24 @@ source $ZSHTOOLS/zsh-you-should-use/you-should-use.plugin.zsh
 
 # bind zsh command line to vim
 bindkey -v
+
+export EDITOR="vim"
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+# zsh substring search key binding
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
-# disable auto notify based on commands
-AUTO_NOTIFY_IGNORE+=(fzf rg)
-
-export EDITOR="vim"
-export LSCOLORS=ExFxBxDxCxegedabagacad
 
 
-ALIAS="$CONFIGS/.alias.sh"
-if [ -f $ALIAS ]; then
-       source $ALIAS
-fi
+# enable alias
+if [[ -f $CONFIGS/.alias.sh ]]; then source $CONFIGS/.alias.sh; fi
+
+# enable machine specific config
+if [[ "$(uname)" == "Linux" ]]; then {source $MACHINES/linuxrc.sh}; fi
+if [[ "$(uname)" == "Mac" ]]; then {source $MACHINES/macrc.sh}; fi
 
 # make man page have color using LESS
 export LESS_TERMCAP_mb=$'\e[1;32m'
@@ -59,20 +61,6 @@ export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
-# enable machine specific config
-unameOut="$(uname -s)"
-case "${unameOut}" in
-    Linux*)     machine="Linux";;
-    Darwin*)    machine="Mac";;
-    *)          machine="UNKNOWN:${unameOut}"
-esac
-
-if [[ $machine = "Linux" ]]
-then
-    source $MACHINES/linux-init.sh
-else
-    source $MACHINES/mac-init.sh
-fi
 
 open_with_fzf() {
     fd -t f -H -I | fzf --multi | xargs -ro code
