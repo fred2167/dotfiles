@@ -1,8 +1,11 @@
 alias ls="ls --color"
+alias la="ls -a"
 alias grep="grep --color=auto"
 alias refresh=". ~/.zshrc"
 alias q=exit
-alias la="ls -a"
+alias mv="mv -i"           # -i prompts before overwrite
+alias mkdir="mkdir -p"     # -p make parent directories as needed
+alias df="df -h"           # -h prints human readable format
 alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gs="git status"
 alias ga="git add"

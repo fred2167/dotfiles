@@ -5,38 +5,22 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-#enable automatic load enviroment variable
-#eval "$(direnv hook zsh)"
-
 DOTFILES=$HOME/dotfiles
-ZSHTOOLS=$DOTFILES/zsh/bin
-CONFIGS=$HOME/dotfiles/config
-MACHINES=$DOTFILES/machines
 
-#add my scripts to path
-PATH=$PATH:$DOTFILES/cml/bin
-if [ -d "$DOTFILES/cml/bin/uber" ]; then
-PATH=$PATH:"$DOTFILES/cml/bin/uber"
-fi
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+CONFIGS=$HOME/dotfiles/config
+[[ ! -f $CONFIGS/.p10k.zsh ]] || source $CONFIGS/.p10k.zsh
 
 # enable zsh plugins
+ZSHTOOLS=$DOTFILES/zsh/bin
 source $ZSHTOOLS/powerlevel10k/powerlevel10k.zsh-theme
 source $ZSHTOOLS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $ZSHTOOLS/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSHTOOLS/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $ZSHTOOLS/zsh-you-should-use/you-should-use.plugin.zsh
 
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f $CONFIGS/.p10k.zsh ]] || source $CONFIGS/.p10k.zsh
-
-
 # bind zsh command line to vim
 bindkey -v
-
-export EDITOR="vim"
-export LSCOLORS=ExFxBxDxCxegedabagacad
-
 # zsh substring search key binding
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -44,13 +28,9 @@ bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
 
-
-# enable alias
-if [[ -f $CONFIGS/.alias.sh ]]; then source $CONFIGS/.alias.sh; fi
-
-# enable machine specific config
-if [[ "$(uname)" == "Linux" ]]; then {source $MACHINES/linuxrc.sh}; fi
-if [[ "$(uname)" == "Mac" ]]; then {source $MACHINES/macrc.sh}; fi
+# MISCELLANEOUS
+export EDITOR="vim"
+export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # make man page have color using LESS
 export LESS_TERMCAP_mb=$'\e[1;32m'
@@ -61,15 +41,16 @@ export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
+# enable alias
+if [[ -f $CONFIGS/.alias.sh ]]; then source $CONFIGS/.alias.sh; fi
 
-open_with_fzf() {
-    fd -t f -H -I | fzf --multi | xargs -ro code
-}
-cd_with_fzf() {
-    cd $HOME && cd "$(fd -t d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview")"
-}
+# enable machine specific config
+MACHINES=$DOTFILES/machines
+if [[ "$(uname)" == "Linux" ]]; then {source $MACHINES/linuxrc.sh}; fi
+if [[ "$(uname)" == "Mac" ]]; then {source $MACHINES/macrc.sh}; fi
 
-zle -N cd_with_fzf cd_with_fzf
-zle -N open_with_fzf open_with_fzf
-bindkey ^F cd_with_fzf
-bindkey ^O open_with_fzf
+# add my shortcuts
+if [[ -f "$DOTFILES/shortcuts/shortcuts.sh" ]]; then source "$DOTFILES/shortcuts/shortcuts.sh"; fi
+
+# add Uber specific shortcuts
+if [[ -f "$DOTFILES/shortcuts/uber.sh" ]]; then source "$DOTFILES/shortcuts/uber.sh"; fi
