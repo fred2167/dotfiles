@@ -8,7 +8,7 @@ fi
 DOTFILES=$HOME/dotfiles
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-CONFIGS=$HOME/dotfiles/config
+CONFIGS=$DOTFILES/config
 [[ ! -f $CONFIGS/.p10k.zsh ]] || source $CONFIGS/.p10k.zsh
 
 # enable zsh plugins
@@ -26,7 +26,6 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
-
 
 # MISCELLANEOUS
 export EDITOR="vim"
