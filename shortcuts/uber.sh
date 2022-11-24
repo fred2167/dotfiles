@@ -24,3 +24,5 @@ ufmt() {
 mydiff(){
 	gitlog | grep fredc
 }
+
+alias uuidgen="uuidgen | tr '[A-Z]' '[a-z]' | tee >(pbcopy)"
