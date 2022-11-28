@@ -46,7 +46,7 @@ if [[ -f $CONFIGS/.alias.sh ]]; then source $CONFIGS/.alias.sh; fi
 # enable machine specific config
 MACHINES=$DOTFILES/machines
 if [[ "$(uname)" == "Linux" ]]; then {source $MACHINES/linuxrc.sh}; fi
-if [[ "$(uname)" == "Mac" ]]; then {source $MACHINES/macrc.sh}; fi
+if [[ "$(uname)" == "Darwin" ]]; then {source $MACHINES/macrc.sh}; fi
 
 # add my shortcuts
 if [[ -f "$DOTFILES/shortcuts/shortcuts.sh" ]]; then source "$DOTFILES/shortcuts/shortcuts.sh"; fi
