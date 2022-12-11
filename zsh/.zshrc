@@ -7,10 +7,6 @@ fi
 
 DOTFILES=$HOME/dotfiles
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-CONFIGS=$DOTFILES/config
-[[ ! -f $CONFIGS/.p10k.zsh ]] || source $CONFIGS/.p10k.zsh
-
 # enable zsh plugins
 ZSHTOOLS=$DOTFILES/zsh/bin
 source $ZSHTOOLS/powerlevel10k/powerlevel10k.zsh-theme
@@ -41,6 +37,7 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 # enable alias
+CONFIGS=$DOTFILES/config
 if [[ -f $CONFIGS/.alias.sh ]]; then source $CONFIGS/.alias.sh; fi
 
 # enable machine specific config
@@ -53,3 +50,6 @@ if [[ -f "$DOTFILES/shortcuts/shortcuts.sh" ]]; then source "$DOTFILES/shortcuts
 
 # add Uber specific shortcuts
 if [[ -f "$DOTFILES/shortcuts/uber.sh" ]]; then source "$DOTFILES/shortcuts/uber.sh"; fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f $CONFIGS/.p10k.zsh ]] || source $CONFIGS/.p10k.zsh

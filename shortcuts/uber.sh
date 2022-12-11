@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ "$(uname)" == "Darwin" ]];
+then
+alias myrider="echo 'ff5f881b-c584-41f5-9222-8e0e726c830f' | tr -d '\n' | tee >(pbcopy)"
+fi
+
 uinit (){
 	cd ~/go-code
 	git checkout main
