@@ -29,3 +29,7 @@ ufmt() {
 mydiff(){
 	gitlog | grep fredc
 }
+
+rmbranch(){
+	git branch -r | grep origin/fredc | sed 's#origin/###g' | xargs git push origin --delete
+}
