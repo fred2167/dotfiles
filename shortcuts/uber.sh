@@ -2,7 +2,7 @@
 
 if [[ "$(uname)" == "Darwin" ]];
 then
-alias myrider="echo 'ff5f881b-c584-41f5-9222-8e0e726c830f' | tr -d '\n' | tee >(pbcopy)"
+alias myrider="echo '00e5933e-d781-48f3-9212-e5a8a0ea59ac' | tr -d '\n' | tee >(pbcopy)"
 fi
 
 uinit (){
