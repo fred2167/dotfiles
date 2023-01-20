@@ -3,6 +3,7 @@
 if [[ "$(uname)" == "Darwin" ]];
 then
 alias myrider="echo '00e5933e-d781-48f3-9212-e5a8a0ea59ac' | tr -d '\n' | tee >(pbcopy)"
+export DEVPOD_NO_SSHWRAP=1
 fi
 
 uinit (){
