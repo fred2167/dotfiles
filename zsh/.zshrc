@@ -5,6 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+
 DOTFILES=$HOME/dotfiles
 
 # enable zsh plugins
@@ -14,6 +15,10 @@ source $ZSHTOOLS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $ZSHTOOLS/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSHTOOLS/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $ZSHTOOLS/zsh-you-should-use/you-should-use.plugin.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+CONFIGS=$DOTFILES/config
+[[ ! -f $CONFIGS/.p10k.zsh ]] || source $CONFIGS/.p10k.zsh
 
 # bind zsh command line to vim
 bindkey -v
@@ -37,7 +42,6 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 # enable alias
-CONFIGS=$DOTFILES/config
 if [[ -f $CONFIGS/.alias.sh ]]; then source $CONFIGS/.alias.sh; fi
 
 # enable machine specific config
@@ -51,5 +55,3 @@ if [[ -f "$DOTFILES/shortcuts/shortcuts.sh" ]]; then source "$DOTFILES/shortcuts
 # add Uber specific shortcuts
 if [[ -f "$DOTFILES/shortcuts/uber.sh" ]]; then source "$DOTFILES/shortcuts/uber.sh"; fi
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f $CONFIGS/.p10k.zsh ]] || source $CONFIGS/.p10k.zsh
