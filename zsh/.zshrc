@@ -53,5 +53,5 @@ if [[ "$(uname)" == "Darwin" ]]; then {source $MACHINES/macrc.sh}; fi
 if [[ -f "$DOTFILES/shortcuts/shortcuts.sh" ]]; then source "$DOTFILES/shortcuts/shortcuts.sh"; fi
 
 # add Uber specific shortcuts
-if [[ (-f "$DOTFILES/shortcuts/uber.sh") && ("$(whoami)" == "")]]; then source "$DOTFILES/shortcuts/uber.sh"; fi
+if [[ (-f "$DOTFILES/shortcuts/uber.sh") && ("$(whoami)" == "fredc")]]; then source "$DOTFILES/shortcuts/uber.sh"; fi
 
