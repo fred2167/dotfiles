@@ -10,7 +10,11 @@ esac
 
 if [[ $machine = "Linux" ]]
 then
+    if [[ $(whoami) == "fredc"]] then sudo dpkg -i git-delta-musl_0.15.1_amd64.deb fi # install git-delta on devpod
+
     cat $SCRIPT_DIR/list.txt | xargs -I % sudo apt install %
 else
     cat $SCRIPT_DIR/list.txt | xargs -I % brew install %
 fi
+
+cat $SCRIPT_DIR/git-delta-config >> ~/.gitconfig
