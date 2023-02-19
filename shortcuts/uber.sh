@@ -31,9 +31,9 @@ ufmt() {
 }
 
 mydiff(){
-	gitlog | grep $(whoami) | less
+	gitlog | rg $(whoami) 
 }
 
 rmbranch(){
-	git branch -r | grep origin/$(whoami) | sed 's#origin/###g' | xargs git push origin --delete
+	git branch -r | rg origin/$(whoami) | sed 's#origin/###g' | xargs git push origin --delete
 }
