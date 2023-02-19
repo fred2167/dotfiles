@@ -4,3 +4,5 @@ fd-find
 tree
 fzf
 tldr
+git-delta
+bat
