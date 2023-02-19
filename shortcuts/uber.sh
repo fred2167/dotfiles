@@ -10,11 +10,11 @@ eval "$(direnv hook zsh)"
 fi
 
 uinit (){
-	cd ~/go-code
+	cd $GOPATH
 	git checkout main
 	git pull
 	arc cascade
-	cd ~/go-code/src/code.uber.internal/amd/amd-api
+	cd $GOPATH/src/code.uber.internal/amd/amd-api
 	make setup
 	make test
 }
@@ -31,9 +31,9 @@ ufmt() {
 }
 
 mydiff(){
-	gitlog | grep fredc
+	gitlog | grep $(whoami) | less
 }
 
 rmbranch(){
-	git branch -r | grep origin/fredc | sed 's#origin/###g' | xargs git push origin --delete
+	git branch -r | grep origin/$(whoami) | sed 's#origin/###g' | xargs git push origin --delete
 }
