@@ -1,7 +1,7 @@
 #!/bin/bash
 
 open_with_fzf() {
-    fd -t f -H -I | fzf --multi | xargs -ro code
+    fd -t f -H -I | fzf --multi --preview 'bat --color=always --style=numbers --line-range=:100 {}'| xargs -ro code
 }
 cd_with_fzf() {
     cd $HOME && cd "$(fd -t d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview")"
