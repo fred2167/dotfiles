@@ -6,3 +6,4 @@ fzf
 tldr
 git-delta
 bat
+jq
