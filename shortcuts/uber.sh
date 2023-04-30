@@ -3,7 +3,6 @@
 if [[ "$(uname)" == "Darwin" ]];
 then
 alias upw="op item get e6j2nznf3uasgobokmech6uvai --fields label=password | pbcopy"
-alias myrider="echo '00e5933e-d781-48f3-9212-e5a8a0ea59ac' | tr -d '\n' | tee >(pbcopy)"
 export DEVPOD_NO_SSHWRAP=1
 echo -e "`date +"%Y-%m-%d %H:%M:%S"` direnv hooking zsh"
 eval "$(direnv hook zsh)"
