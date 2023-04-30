@@ -1,5 +1,7 @@
 alias ls="exa"
 alias ll="exa --long"
+alias cd="z"
+alias zz="z -"
 alias grep="grep --color=auto"
 alias refresh=". ~/.zshrc"
 alias q=exit

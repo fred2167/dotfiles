@@ -10,7 +10,7 @@ esac
 
 if [[ $machine = "Linux" ]]
 then
-    if [[ $(whoami) == "fredc"]] then sudo dpkg -i $SCRIPT_DIR/*.deb fi # install tools on devpod
+    if [[ $(whoami) == "fredc"]] then sudo dpkg -i $SCRIPT_DIR/deb/*.deb fi # install tools on devpod
 
     cat $SCRIPT_DIR/list.txt | xargs -I % sudo apt install %
 else

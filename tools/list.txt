@@ -8,3 +8,4 @@ git-delta
 bat
 jq
 exa
+zoxide
