@@ -29,7 +29,6 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 
 # MISCELLANEOUS
 export EDITOR="vim"
-export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # make man page have color using LESS
 export LESS_TERMCAP_mb=$'\e[1;32m'

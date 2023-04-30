@@ -7,3 +7,4 @@ tldr
 git-delta
 bat
 jq
+exa

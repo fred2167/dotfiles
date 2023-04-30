@@ -1,5 +1,5 @@
-alias ls="ls --color"
-alias la="ls -a"
+alias ls="exa"
+alias ll="exa --long"
 alias grep="grep --color=auto"
 alias refresh=". ~/.zshrc"
 alias q=exit
