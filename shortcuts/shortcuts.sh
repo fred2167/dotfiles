@@ -35,4 +35,4 @@ zle -N open_with_fzf open_with_fzf
 zle -N rg_fzf rg_fzf
 bindkey ^G cd_with_fzf
 bindkey ^O open_with_fzf
-bindkey ^F rg_fzf
+bindkey ^R rg_fzf
