@@ -7,6 +7,10 @@ export DEVPOD_NO_SSHWRAP=1
 echo -e "`date +"%Y-%m-%d %H:%M:%S"` direnv hooking zsh"
 eval "$(direnv hook zsh)"
 fi
+if [[ "$(uname)" == "Linux" ]];
+then
+ export PATH="$HOME/.local/bin:$PATH"
+fi
 
 uinit (){
 	cd $GOPATH
@@ -30,7 +34,7 @@ ufmt() {
 }
 
 mydiff(){
-	gitlog | rg $(whoami) 
+	gitlog | rg $(whoami)
 }
 
 rmbranch(){

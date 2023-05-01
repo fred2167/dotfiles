@@ -39,8 +39,6 @@ export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
-eval "$(zoxide init zsh)"
-
 # enable alias
 if [[ -f $CONFIGS/.alias.sh ]]; then source $CONFIGS/.alias.sh; fi
 
@@ -55,3 +53,4 @@ if [[ -f "$DOTFILES/shortcuts/shortcuts.sh" ]]; then source "$DOTFILES/shortcuts
 # add Uber specific shortcuts
 if [[ (-f "$DOTFILES/shortcuts/uber.sh") && ("$(whoami)" == "fredc")]]; then source "$DOTFILES/shortcuts/uber.sh"; fi
 
+eval "$(zoxide init zsh)"
