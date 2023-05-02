@@ -11,7 +11,7 @@ cd_with_fzf() {
 rf(){
     # Switch between Ripgrep launcher mode (CTRL-R) and fzf filtering mode (CTRL-F)
     rm -f /tmp/rg-fzf-{r,f}
-    RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case --type-not bazel --type-not yaml --type-not json"
+    RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case --type-not bazel --type-not yaml --type-not json -g '!*test.go'"
     INITIAL_QUERY="${*:-}"
     FZF_DEFAULT_COMMAND="$RG_PREFIX $(printf %q "$INITIAL_QUERY")" \
     fzf --ansi \
