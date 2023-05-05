@@ -54,3 +54,4 @@ if [[ -f "$DOTFILES/shortcuts/shortcuts.sh" ]]; then source "$DOTFILES/shortcuts
 if [[ (-f "$DOTFILES/shortcuts/uber.sh") && ("$(whoami)" == "fredc")]]; then source "$DOTFILES/shortcuts/uber.sh"; fi
 
 eval "$(zoxide init zsh)"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

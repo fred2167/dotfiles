@@ -9,7 +9,6 @@ eval "$(direnv hook zsh)"
 fi
 if [[ "$(uname)" == "Linux" ]];
 then
- [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
  export PATH="$HOME/.local/bin:$PATH"
 fi
 
