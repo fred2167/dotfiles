@@ -48,6 +48,7 @@ if [[ "$(uname)" == "Linux" ]]; then {source $MACHINES/linuxrc.sh}; fi
 if [[ "$(uname)" == "Darwin" ]]; then {source $MACHINES/macrc.sh}; fi
 
 # add my shortcuts
+if [[ -f "$DOTFILES/shortcuts/fzf-git.sh" ]]; then source "$DOTFILES/shortcuts/fzf-git.sh"; fi
 if [[ -f "$DOTFILES/shortcuts/shortcuts.sh" ]]; then source "$DOTFILES/shortcuts/shortcuts.sh"; fi
 
 # add Uber specific shortcuts

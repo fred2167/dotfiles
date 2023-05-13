@@ -29,6 +29,11 @@ rf(){
         --bind 'enter:become(code --goto {1}:{2}:{3})'
 }
 
+gco() {
+  local selected=$(_fzf_git_each_ref --no-multi)
+  [ -n "$selected" ] && git checkout "$selected"
+}
+
 # bind shortcusts to control keys
 zle -N open_with_fzf open_with_fzf
 bindkey ^O open_with_fzf
