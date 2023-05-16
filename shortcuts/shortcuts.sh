@@ -30,8 +30,13 @@ rf(){
 }
 
 gco() {
+  if [[ $# -eq 1 ]] 
+  then
+  git checkout $1
+  else
   local selected=$(_fzf_git_each_ref --no-multi)
   [ -n "$selected" ] && git checkout "$selected"
+  fi
 }
 
 # bind shortcusts to control keys
