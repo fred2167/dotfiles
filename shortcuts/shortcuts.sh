@@ -8,8 +8,7 @@ gt() {
     cd "$(fd . $HOME -t d | fzf --preview="tree -L 1 {}")"
 }
 
-rf(){
-    # Switch between Ripgrep launcher mode (CTRL-R) and fzf filtering mode (CTRL-F)
+rf() {
     rm -f /tmp/rg-fzf-{r,f}
     RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case --type-not bazel --type-not yaml --type-not json -g '!*test.go'"
     INITIAL_QUERY="${*:-}"
@@ -30,13 +29,13 @@ rf(){
 }
 
 gco() {
-  if [[ $# -eq 1 ]] 
-  then
-  git checkout $1
-  else
-  local selected=$(_fzf_git_each_ref --no-multi)
-  [ -n "$selected" ] && git checkout "$selected"
-  fi
+    if [[ $# -eq 1 ]] 
+    then
+        git checkout $1
+    else
+        local selected=$(_fzf_git_each_ref --no-multi)
+        [ -n "$selected" ] && git checkout "$selected"
+    fi
 }
 
 # bind shortcusts to control keys
