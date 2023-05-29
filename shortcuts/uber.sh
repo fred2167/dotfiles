@@ -2,14 +2,15 @@
 
 if [[ "$(uname)" == "Darwin" ]];
 then
-alias upw="op item get e6j2nznf3uasgobokmech6uvai --fields label=password | pbcopy"
-export DEVPOD_NO_SSHWRAP=1
-echo -e "`date +"%Y-%m-%d %H:%M:%S"` direnv hooking zsh"
-eval "$(direnv hook zsh)"
+	alias upw="op item get e6j2nznf3uasgobokmech6uvai --fields label=password | pbcopy"
+	export DEVPOD_NO_SSHWRAP=1
+	echo -e "`date +"%Y-%m-%d %H:%M:%S"` direnv hooking zsh"
+	eval "$(direnv hook zsh)"
 fi
+
 if [[ "$(uname)" == "Linux" ]];
 then
- export PATH="$HOME/.local/bin:$PATH"
+	export PATH="$HOME/.local/bin:$PATH"
 fi
 
 uinit (){
@@ -17,9 +18,6 @@ uinit (){
 	git checkout main
 	git pull
 	arc cascade
-	cd $GOPATH/src/code.uber.internal/amd/amd-api
-	make setup
-	make test
 }
 
 ufmt() {
