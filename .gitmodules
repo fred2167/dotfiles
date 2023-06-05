@@ -26,3 +26,15 @@
 	path = tools/github/fzf
 	url = https://github.com/junegunn/fzf.git
 	ignore = dirty
+[submodule "installer/plugins/dotbot-ifplatform"]
+	path = installer/plugins/dotbot-ifplatform
+	url = https://github.com/ssbanerje/dotbot-ifplatform.git
+	ignore = dirty
+[submodule "installer/plugins/dotbot-brew"]
+	path = installer/plugins/dotbot-brew
+	url = https://github.com/d12frosted/dotbot-brew.git
+	ignore = dirty
+[submodule "installer/plugins/dotbot-apt"]
+	path = installer/plugins/dotbot-apt
+	url = https://github.com/bryant1410/dotbot-apt
+	ignore = dirty
