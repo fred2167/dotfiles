@@ -2,38 +2,49 @@
 	path = installer/dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+	shallow = true
 [submodule "zsh/plugins/powerlevel10k"]
 	path = zsh/plugins/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k
 	ignore = dirty
+	shallow = true
 [submodule "zsh/plugins/zsh-autosuggestions"]
 	path = zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
 	ignore = dirty
+	shallow = true
 [submodule "zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 	ignore = dirty
+	shallow = true
 [submodule "zsh/plugins/zsh-history-substring-search"]
 	path = zsh/plugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search
 	ignore = dirty
+	shallow = true
 [submodule "zsh/plugins/zsh-you-should-use"]
 	path = zsh/plugins/zsh-you-should-use
 	url = https://github.com/MichaelAquilina/zsh-you-should-use
 	ignore = dirty
+	shallow = true
 [submodule "tools/github/fzf"]
 	path = tools/github/fzf
 	url = https://github.com/junegunn/fzf.git
 	ignore = dirty
+	shallow = true
 [submodule "installer/plugins/dotbot-ifplatform"]
 	path = installer/plugins/dotbot-ifplatform
 	url = https://github.com/ssbanerje/dotbot-ifplatform.git
 	ignore = dirty
+	shallow = true
 [submodule "installer/plugins/dotbot-apt"]
 	path = installer/plugins/dotbot-apt
 	url = https://github.com/bryant1410/dotbot-apt
 	ignore = dirty
+	shallow = true
 [submodule "installer/plugins/dotbot-brew"]
 	path = installer/plugins/dotbot-brew
 	url = https://github.com/wren/dotbot-brew.git
+	ignore = dirty
+	shallow = true

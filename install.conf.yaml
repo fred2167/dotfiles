@@ -26,6 +26,7 @@
     command:  ~/dotfiles/tools/github/fzf/install
 
 - ifmacos:
+  - install-brew: true
   - brew:
     - tree
     - ripgrep
