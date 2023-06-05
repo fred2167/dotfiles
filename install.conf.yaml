@@ -14,3 +14,9 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - 
+    description: install fzf
+    command:  ~/dotfiles/tools/github/fzf/install
+    stdin: true
+    stdout: true
+    stderr: true

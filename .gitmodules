@@ -22,3 +22,7 @@
 	path = zsh/plugins/zsh-you-should-use
 	url = https://github.com/MichaelAquilina/zsh-you-should-use
 	ignore = dirty
+[submodule "tools/github/fzf"]
+	path = tools/github/fzf
+	url = https://github.com/junegunn/fzf.git
+	ignore = dirty
