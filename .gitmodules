@@ -34,6 +34,3 @@
 	path = installer/plugins/dotbot-apt
 	url = https://github.com/bryant1410/dotbot-apt
 	ignore = dirty
-[submodule "installer/plugins/dotbot-brew"]
-	path = installer/plugins/dotbot-brew
-	url = https://github.com/wren/dotbot-brew.git
