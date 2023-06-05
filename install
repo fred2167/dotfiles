@@ -16,11 +16,11 @@ git submodule update --init --recursive "${BASEDIR}"
 
 # Get Plugins
 declare -a PLUGINS
-PLUGINS=("--plugin-dir" "${PLUGINDIR}" \
+PLUGINS=(\
   "--plugin-dir" "${PLUGINDIR}/dotbot-ifplatform" \
   "--plugin-dir" "${PLUGINDIR}/dotbot-brew" \
   "--plugin-dir" "${PLUGINDIR}/dotbot-apt" \
   "--plugin-dir" "${PLUGINDIR}/dotbot-sudo" 
 )
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}"  "${PLUGINS[@]}" -c "${CONFIG}" "${@}"
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}"  --disable-built-in-plugins -d "${BASEDIR}"  "${PLUGINS[@]}" -c "${CONFIG}" "${@}"
