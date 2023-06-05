@@ -23,7 +23,7 @@
 - shell:
   - 
     description: install fzf
-    command:  ~/dotfiles/tools/github/fzf/install
+    command:  ~/dotfiles/tools/github/fzf/install --key-bindings --no-completion --no-update-rc 
   
 - ifmacos:
   - brew:
