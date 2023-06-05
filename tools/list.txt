@@ -1,9 +1,0 @@
-ripgrep
-fd
-fd-find
-tree
-tldr
-git-delta
-bat
-jq
-exa

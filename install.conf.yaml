@@ -6,6 +6,10 @@
       stdin: true
       stdout: true
       stderr: true
+    brew:
+      stdin: true
+      stdout: true
+      stderr: true
 
 - clean: ['~']
 
@@ -21,10 +25,27 @@
     description: install fzf
     command:  ~/dotfiles/tools/github/fzf/install
   
-  - 
-    description: install zoxide
-    command: curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-
 - ifmacos:
+  - install-brew: true
   - brew:
+    - tree
     - ripgrep
+    - fd
+    - tldr
+    - git-delta
+    - bat
+    - jq
+    - exa
+    - zoxide
+
+- ifdebian:
+  - apt:
+    - tree
+    - ripgrep
+    - fd-find
+    - tldr
+    - git-delta
+    - bat
+    - jq
+    - exa
+    - zoxide
