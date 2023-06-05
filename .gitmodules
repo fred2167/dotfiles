@@ -1,5 +1,5 @@
 [submodule "dotbot"]
-	path = dotbot
+	path = installer/dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
 [submodule "zsh/plugins/powerlevel10k"]
