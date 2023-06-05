@@ -8,14 +8,7 @@ fi
 DOTFILES=$HOME/dotfiles
 
 # enable zsh plugins
-ZSHTOOLS=$DOTFILES/zsh/bin
-source $ZSHTOOLS/powerlevel10k/powerlevel10k.zsh-theme
-source $ZSHTOOLS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
-source $ZSHTOOLS/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $ZSHTOOLS/zsh-history-substring-search/zsh-history-substring-search.zsh
-source $ZSHTOOLS/zsh-you-should-use/you-should-use.plugin.zsh
-eval "$(zoxide init zsh)"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f $DOTFILES/zsh/zsh_tools_init.sh ] && source $DOTFILES/zsh/zsh_tools_init.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 CONFIGS=$DOTFILES/config
@@ -23,11 +16,6 @@ CONFIGS=$DOTFILES/config
 
 # bind zsh command line to vim
 bindkey -v
-# zsh substring search key binding
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
 
 # MISCELLANEOUS
 export EDITOR="vim"
