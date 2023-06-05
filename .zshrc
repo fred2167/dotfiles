@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-DOTFILES=$HOME/dotfiles
+DOTFILES=$(dirname -- "$0")/dotfiles
 
 # enable zsh plugins
 [ -f $DOTFILES/zsh/zsh_tools_init.sh ] && source $DOTFILES/zsh/zsh_tools_init.sh
