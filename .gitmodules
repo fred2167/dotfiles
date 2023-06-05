@@ -48,3 +48,6 @@
 	url = https://github.com/wren/dotbot-brew.git
 	ignore = dirty
 	shallow = true
+[submodule "installer/plugins/dotbot-sudo"]
+	path = installer/plugins/dotbot-sudo
+	url = https://github.com/DrDynamic/dotbot-sudo.git
