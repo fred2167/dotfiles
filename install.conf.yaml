@@ -2,6 +2,10 @@
     link:
       create: true
       relink: true
+    shell:
+      stdin: true
+      stdout: true
+      stderr: true
 
 - clean: ['~']
 
@@ -13,10 +17,10 @@
   - ~/.local/bin
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
   - 
     description: install fzf
     command:  ~/dotfiles/tools/github/fzf/install
-    stdin: true
-    stdout: true
-    stderr: true
+  
+  - 
+    description: install zoxide
+    command: curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash

@@ -8,11 +8,6 @@ then
 	eval "$(direnv hook zsh)"
 fi
 
-if [[ "$(uname)" == "Linux" ]];
-then
-	export PATH="$HOME/.local/bin:$PATH"
-fi
-
 uinit (){
 	cd $GOPATH
 	git checkout main
