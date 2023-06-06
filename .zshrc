@@ -7,6 +7,9 @@ fi
 
 DOTFILES=$(dirname -- "$0")/dotfiles
 
+# add local bin to PATH
+export PATH="$HOME/.local/bin:$PATH"
+
 # enable zsh plugins
 [ -f $DOTFILES/zsh/zsh_tools_init.sh ] && source $DOTFILES/zsh/zsh_tools_init.sh
 
@@ -28,9 +31,6 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
-
-# add local bin to PATH
-export PATH="$HOME/.local/bin:$PATH"
 
 # enable alias
 if [[ -f $CONFIGS/.alias.sh ]]; then source $CONFIGS/.alias.sh; fi

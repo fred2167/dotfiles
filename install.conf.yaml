@@ -45,8 +45,8 @@
       - bat
       - jq
       - exa
+  - link:
+      ~/.local/bin/delta: tools/bin/delta
   - shell:
     - description: install zoxide
       command: curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-  - link:
-      ~/.local/bin/delta: tools/bin/delta
