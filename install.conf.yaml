@@ -16,15 +16,13 @@
 - link:
     ~/.zshrc: .zshrc
     ~/.vimrc: .vimrc
-
 - create:
   - ~/.local/bin
 
 - shell:
-  - 
-    description: install fzf
-    command:  ~/dotfiles/tools/github/fzf/install --key-bindings --no-completion --no-update-rc 
-  
+  - description: install fzf
+    command:  ~/dotfiles/tools/github/fzf/install --key-bindings --no-completion --no-update-rc
+
 - ifmacos:
   - brew:
     - tree
@@ -38,13 +36,17 @@
     - zoxide
 
 - ifdebian:
-  - apt:
-    - tree
-    - ripgrep
-    - fd-find
-    - tldr
-    - git-delta
-    - bat
-    - jq
-    - exa
-    - zoxide
+  - sudo:
+    - apt:
+      - tree
+      - ripgrep
+      - fd-find
+      - tldr
+      - bat
+      - jq
+      - exa
+  - shell:
+    - description: install zoxide
+      command: curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+  - link:
+      ~/.local/bin/delta: tools/bin/delta
