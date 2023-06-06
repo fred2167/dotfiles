@@ -11,11 +11,16 @@
       stdout: true
       stderr: true
 
-- clean: ['~']
+- clean:
+    ~/:
+      force: true
+    ~/.local/bin:
+      force: true
 
 - link:
     ~/.zshrc: .zshrc
     ~/.vimrc: .vimrc
+
 - create:
   - ~/.local/bin
 
