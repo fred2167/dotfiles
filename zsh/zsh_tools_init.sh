@@ -6,7 +6,7 @@ source $ZSHTOOLS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source $ZSHTOOLS/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSHTOOLS/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $ZSHTOOLS/zsh-you-should-use/you-should-use.plugin.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source ~/.fzf.zsh
 
 # zsh substring search key binding
 bindkey '^[[A' history-substring-search-up

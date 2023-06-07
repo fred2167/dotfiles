@@ -20,6 +20,7 @@
 - link:
     ~/.zshrc: .zshrc
     ~/.vimrc: .vimrc
+    ~/.gitconfig_local: .gitconfig
 
 - create:
   - ~/.local/bin
