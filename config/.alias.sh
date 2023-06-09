@@ -1,5 +1,6 @@
 alias ls="exa"
 alias ll="exa --long"
+alias la="exa -al"
 alias cd="z"
 alias zz="z -"
 alias grep="grep --color=auto"
