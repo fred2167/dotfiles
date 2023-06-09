@@ -27,7 +27,7 @@
 
 - shell:
   - description: install fzf
-    command:  ~/dotfiles/tools/github/fzf/install --key-bindings --no-completion --no-update-rc
+    command:  tools/github/fzf/install --key-bindings --no-completion --no-update-rc
 
 - ifmacos:
   - brew:
@@ -48,7 +48,6 @@
       - ripgrep
       - fd-find
       - tldr
-      - bat
       - jq
       - exa
   - link:
@@ -56,3 +55,6 @@
   - shell:
     - description: install zoxide
       command: curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+
+    - description: install bat
+      command:  sudo dpkg -i tools/deb/bat-musl_0.23.0_amd64.deb
