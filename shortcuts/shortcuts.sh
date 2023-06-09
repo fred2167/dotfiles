@@ -10,7 +10,7 @@ gt() {
 
 rf() {
     rm -f /tmp/rg-fzf-{r,f}
-    RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case --type-not bazel --type-not yaml --type-not json -g '!*test.go'"
+    RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case --type-not bazel --type-not yaml --type-not json -g '!*test.go' "
     INITIAL_QUERY="${*:-}"
     : | fzf --ansi --disabled --query "$INITIAL_QUERY" \
         --bind "start:reload($RG_PREFIX {q})+unbind(ctrl-r)" \
