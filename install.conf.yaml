@@ -21,6 +21,7 @@
     ~/.zshrc: .zshrc
     ~/.vimrc: .vimrc
     ~/.gitconfig_local: .gitconfig
+    ~/.jq: config/jq
 
 - create:
   - ~/.local/bin
