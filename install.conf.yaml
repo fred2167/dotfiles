@@ -20,7 +20,7 @@
 - link:
     ~/.zshrc: zsh/.zshrc
     ~/.vimrc: config/.vimrc
-    ~/.gitconfig_local: .gitconfig
+    ~/.gitconfig: .gitconfig
     ~/.jq: config/.jq
 
 - create:
