@@ -18,10 +18,10 @@
       force: true
 
 - link:
-    ~/.zshrc: .zshrc
-    ~/.vimrc: .vimrc
+    ~/.zshrc: zsh/.zshrc
+    ~/.vimrc: config/.vimrc
     ~/.gitconfig_local: .gitconfig
-    ~/.jq: config/jq
+    ~/.jq: config/.jq
 
 - create:
   - ~/.local/bin
