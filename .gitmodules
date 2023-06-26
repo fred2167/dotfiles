@@ -13,11 +13,6 @@
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 	ignore = dirty
 	shallow = true
-[submodule "zsh/plugins/zsh-history-substring-search"]
-	path = zsh/plugins/zsh-history-substring-search
-	url = https://github.com/zsh-users/zsh-history-substring-search
-	ignore = dirty
-	shallow = true
 [submodule "zsh/plugins/zsh-you-should-use"]
 	path = zsh/plugins/zsh-you-should-use
 	url = https://github.com/MichaelAquilina/zsh-you-should-use
