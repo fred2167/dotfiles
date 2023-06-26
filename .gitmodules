@@ -8,11 +8,6 @@
 	url = https://github.com/romkatv/powerlevel10k
 	ignore = dirty
 	shallow = true
-[submodule "zsh/plugins/zsh-autosuggestions"]
-	path = zsh/plugins/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions
-	ignore = dirty
-	shallow = true
 [submodule "zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
@@ -51,5 +46,10 @@
 [submodule "installer/plugins/dotbot-sudo"]
 	path = installer/plugins/dotbot-sudo
 	url = https://github.com/DrDynamic/dotbot-sudo.git
+	ignore = dirty
+	shallow = true
+[submodule "zsh/plugins/zsh-autocomplete"]
+	path = zsh/plugins/zsh-autocomplete
+	url = https://github.com/marlonrichert/zsh-autocomplete.git
 	ignore = dirty
 	shallow = true
