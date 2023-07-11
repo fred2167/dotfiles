@@ -51,7 +51,6 @@
       - tldr
       - jq
       - exa
-      - sd
   - link:
       ~/.local/bin/delta: tools/bin/delta
   - shell:
