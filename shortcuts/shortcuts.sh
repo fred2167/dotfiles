@@ -27,13 +27,18 @@ rf() {
 }
 
 gco() {
-    if [[ $# -eq 1 ]] 
+    if [[ $# -eq 1 ]]
     then
-        git checkout $1
+        git checkout "$1"
     else
         local selected=$(_fzf_git_each_ref --no-multi)
         [ -n "$selected" ] && git checkout "$selected"
     fi
+}
+
+jsontocsv() {
+    cat "$1" | \
+    jq -r '(map(keys) | add | unique) as $cols | map(. as $row | $cols | map($row[.])) as $rows | $cols, $rows[] | @csv'
 }
 
 # bind shortcusts to control keys
