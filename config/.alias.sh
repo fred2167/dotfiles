@@ -4,7 +4,7 @@ alias la="exa -al"
 alias cd="z"
 alias zz="z -"
 alias grep="grep --color=auto"
-alias refresh=". ~/.zshrc"
+alias rr=". ~/.zshrc"
 alias q=exit
 alias mv="mv -i"           # -i prompts before overwrite
 alias mkdir="mkdir -p"     # -p make parent directories as needed
