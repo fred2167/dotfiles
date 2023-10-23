@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-DOTFILES=$(dirname -- "$0")/dotfiles
+DOTFILES=$HOME/dotfiles
 
 # add local bin to PATH
 export PATH="$HOME/.local/bin:$PATH"
