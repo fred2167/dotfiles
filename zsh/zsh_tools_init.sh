@@ -14,4 +14,9 @@ bindkey '^[[B' history-substring-search-down
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
+# fzf configs
+bindkey "ç" fzf-cd-widget
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind 'tab:toggle-preview'"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+
 eval "$(zoxide init zsh)"

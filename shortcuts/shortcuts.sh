@@ -44,4 +44,3 @@ jsontocsv() {
 # bind shortcusts to control keys
 zle -N open_with_fzf open_with_fzf
 bindkey ^O open_with_fzf
-bindkey "ç" fzf-cd-widget
