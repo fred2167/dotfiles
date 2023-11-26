@@ -27,7 +27,7 @@
 
 - shell:
   - description: install fzf
-    command:  tools/github/fzf/install --key-bindings --no-completion --no-update-rc
+    command:  tools/github/fzf/install --key-bindings --completion --no-update-rc
 
 - ifmacos:
   - brew:
