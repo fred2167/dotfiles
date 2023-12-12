@@ -1,13 +1,4 @@
 #!/bin/bash
-
-if [[ "$(uname)" == "Darwin" ]];
-then
-	alias upw="op item get e6j2nznf3uasgobokmech6uvai --fields label=password | pbcopy"
-	export DEVPOD_NO_SSHWRAP=1
-	echo -e "`date +"%Y-%m-%d %H:%M:%S"` direnv hooking zsh"
-	eval "$(direnv hook zsh)"
-fi
-
 uinit (){
 	cd $GOPATH
 	git checkout main
@@ -41,4 +32,11 @@ port_fowrad_michael_angelo(){
     	ssh -fN -L 9999:localhost:5435  fredc@phx6-4at -p 31231
  	fi
 }
-port_fowrad_michael_angelo
+
+if [[ "$(uname)" == "Darwin" ]];
+then
+	export DEVPOD_NO_SSHWRAP=1
+	echo -e "`date +"%Y-%m-%d %H:%M:%S"` direnv hooking zsh"
+	eval "$(direnv hook zsh)"
+	port_fowrad_michael_angelo
+fi
