@@ -53,3 +53,6 @@
 	url = https://github.com/DrDynamic/dotbot-sudo.git
 	ignore = dirty
 	shallow = true
+[submodule "zsh/plugins/jq-zsh-plugin"]
+	path = zsh/plugins/jq-zsh-plugin
+	url = git@github.com:reegnz/jq-zsh-plugin.git
