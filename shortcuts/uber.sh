@@ -33,3 +33,12 @@ mydiff(){
 rmbranch(){
 	git branch -r | rg origin/$(whoami) | sed 's#origin/###g' | xargs git push origin --delete
 }
+
+port_fowrad_michael_angelo(){
+	if lsof -Pi :9999 -sTCP:LISTEN -t >/dev/null; then
+    	echo "michanel angelo instance port foraward: Port 9999 is in use."
+	else
+    	ssh -fN -L 9999:localhost:5435  fredc@phx6-4at -p 31231
+ 	fi
+}
+port_fowrad_michael_angelo
