@@ -18,7 +18,7 @@ ufmt() {
 }
 
 mydiff(){
-	gitlog | rg $(whoami)
+	gitlog | rg $(whoami) | less
 }
 
 rmbranch(){

@@ -4,10 +4,6 @@ open_with_fzf() {
     fd -t f -H -I | fzf --multi --preview 'bat --color=always --style=numbers --line-range=:100 {}'| xargs -ro code
 }
 
-gt() {
-    cd "$(fd . $HOME -t d | fzf --preview="tree -L 1 {}")"
-}
-
 rf() {
     rm -f /tmp/rg-fzf-{r,f}
     RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case --type-not bazel --type-not yaml --type-not json -g '!*test.go' "
