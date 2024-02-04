@@ -38,7 +38,7 @@
     - git-delta
     - bat
     - jq
-    - exa
+    - eza
     - zoxide
     - sd
 
@@ -50,7 +50,7 @@
       - fd-find
       - tldr
       - jq
-      - exa
+      - eza
   - link:
       ~/.local/bin/delta: tools/bin/delta
   - shell:
