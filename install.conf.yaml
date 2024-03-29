@@ -41,6 +41,7 @@
     - eza
     - zoxide
     - sd
+    - eza
 
 - ifdebian:
   - sudo:

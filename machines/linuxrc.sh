@@ -1,5 +1,8 @@
 #!/bin/bash
 alias fd="fdfind"
+alias ls="exa"
+alias ll="exa --long"
+alias la="exa -al"
 export FZF_DEFAULT_COMMAND='fdfind'
 
 # find and replace
