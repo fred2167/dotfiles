@@ -21,7 +21,7 @@ rf() {
         --header 'CTRL-T: Switch between ripgrep/fzf' \
         --preview 'bat --color=always {1} --highlight-line {2}' \
         --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
-        --bind 'enter:become(vim {1} +{2})'
+        --bind 'enter:become(code --goto {1}:{2}:{3})'
 }
 
 gco() {
