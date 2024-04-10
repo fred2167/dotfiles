@@ -22,7 +22,7 @@ mydiff(){
 }
 
 rmbranch(){
-	git branch -r | rg origin/$(whoami) | sed 's#origin/###g' | xargs git push origin --delete
+	git ls-remote | grep fredc | sed 's/.*\t//g' | xargs git push origin --delete
 }
 
 port_fowrad_michael_angelo(){
