@@ -29,7 +29,7 @@ port_fowrad_michael_angelo(){
 	if lsof -Pi :9999 -sTCP:LISTEN -t >/dev/null; then
     	echo "michanel angelo instance port foraward: Port 9999 is in use."
 	else
-    	ssh -fN -L 9999:localhost:5435  fredc@phx6-sz8 -p 31725
+    	ssh -fN -L 9999:localhost:5435 fredc@phx6-7v4 -p 31175
  	fi
 }
 
