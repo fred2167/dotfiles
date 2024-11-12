@@ -2,8 +2,8 @@
 uinit (){
 	cd $GOPATH
 	git checkout main
-	git pull
-	arc cascade
+	git pull origin main
+	arc cascade -hc
 }
 
 ufmt() {
@@ -29,7 +29,7 @@ port_fowrad_michael_angelo(){
 	if lsof -Pi :9999 -sTCP:LISTEN -t >/dev/null; then
     	echo "michanel angelo instance port foraward: Port 9999 is in use."
 	else
-    	ssh -fN -L 9999:localhost:5435 fredc@phx6-7v4 -p 31175
+    	ssh -fN -L 9999:localhost:5435 fredc@phx5-3cq -p 31196
  	fi
 }
 
