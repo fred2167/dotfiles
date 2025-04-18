@@ -43,6 +43,15 @@ The installer will:
 - Set up shell configurations
 - Install additional tools and utilities
 
+## Updating Submodules
+
+To keep your dotfiles up to date with the latest changes in submodules:
+
+```bash
+# Update all submodules to their latest versions
+git submodule update  --recursive --remote 
+```
+
 ## Directory Structure
 
 - `config/` - Configuration files for various tools
