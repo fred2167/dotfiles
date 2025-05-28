@@ -27,12 +27,12 @@ end
 -- Focus logic
   -- Define zones using QWER
 local zoneBindings = {
-  {key = "i", screenIndex = 1, side = "left"},
-  {key = "o", screenIndex = 1, side = "right"},
-  {key = "p", screenIndex = 2, side = "left"},
-  {key = "[", screenIndex = 2, side = "right"},
-  {key = "]", screenIndex = 3, side = "left"},
-  {key = "\\", screenIndex = 3, side = "right"},
+  {key = "q", screenIndex = 1, side = "left"},
+  {key = "w", screenIndex = 1, side = "right"},
+  {key = "e", screenIndex = 2, side = "left"},
+  {key = "r", screenIndex = 2, side = "right"},
+  {key = "t", screenIndex = 3, side = "left"},
+  {key = "y", screenIndex = 3, side = "right"},
   -- Add more if needed, like:
 }
 
