@@ -25,23 +25,13 @@
 - create:
   - ~/.local/bin
 
-- shell:
-  - description: install fzf
-    command:  tools/github/fzf/install --key-bindings --completion --no-update-rc
-
 - ifmacos:
-  - brew:
-    - tree
-    - ripgrep
-    - fd
-    - tldr
-    - git-delta
-    - bat
-    - jq
-    - eza
-    - zoxide
-    - sd
-    - eza
+  - shell:
+    - description: install brew packages
+      command: brew bundle --file=tools/Brewfile
+  - link:
+      ~/.hammerspoon/init.lua: config/init.lua
+    
 
 - ifdebian:
   - sudo:
@@ -55,6 +45,9 @@
   - link:
       ~/.local/bin/delta: tools/bin/delta
   - shell:
+    - description: install fzf
+      command:  tools/github/fzf/install --key-bindings --completion --no-update-rc
+
     - description: install zoxide
       command: curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
 
