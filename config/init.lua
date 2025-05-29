@@ -85,8 +85,36 @@ end
 hs.hotkey.bind(hyper, "left", function() moveWindowTo("left") end)
 hs.hotkey.bind(hyper, "right", function() moveWindowTo("right") end)
 
--- Defeat paste blocking
-hs.hotkey.bind({"cmd", "alt"}, "V", function() hs.eventtap.keyStrokes(hs.pasteboard.getContents()) end)
+-- Move window to the next display
+hs.hotkey.bind(hyper, "N", function()
+  local win = hs.window.focusedWindow()
+  win:moveToScreen(win:screen():next())
+end)
+
+-- FInd mouse pointer on screen
+hs.hotkey.bind(hyper, "M", function()
+  local pos = hs.mouse.getAbsolutePosition()
+  local circle = hs.drawing.circle(hs.geometry.rect(pos.x - 40, pos.y - 40, 80, 80))
+  circle:setStrokeColor({red=1,green=0,blue=0,alpha=0.9})
+  circle:setStrokeWidth(4)
+  circle:show()
+  hs.timer.doAfter(0.6, function() circle:delete() end)
+end)
+
+-- Hyper + C → Google Chrome
+hs.hotkey.bind(hyper, "C", function()
+  hs.application.launchOrFocus("Google Chrome")
+end)
+
+-- Hyper + V → VS Code
+hs.hotkey.bind(hyper, "V", function()
+  hs.application.launchOrFocus("Visual Studio Code")
+end)
+
+-- Hyper + G → chatGPT Code
+hs.hotkey.bind(hyper, "G", function()
+  hs.application.launchOrFocus("ChatGPT")
+end)
 
 -- Show config loaded screen
 hs.alert.show("Config loaded")
