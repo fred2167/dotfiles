@@ -47,3 +47,8 @@ if [[ -f "$DOTFILES/shortcuts/shortcuts.sh" ]]; then source "$DOTFILES/shortcuts
 
 # add Uber specific shortcuts
 if [[ (-f "$DOTFILES/shortcuts/uber.sh") && ("$(whoami)" == "fredc")]]; then source "$DOTFILES/shortcuts/uber.sh"; fi
+
+# conditionally hookup direnv when avaliable
+if command -v direnv >/dev/null 2>&1; then
+  eval "$(direnv hook zsh)"
+fi

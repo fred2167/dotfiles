@@ -81,7 +81,6 @@ local function moveWindowTo(side)
   newFrame.h = frame.h
   win:setFrame(newFrame)
 end
-
 hs.hotkey.bind(hyper, "left", function() moveWindowTo("left") end)
 hs.hotkey.bind(hyper, "right", function() moveWindowTo("right") end)
 
