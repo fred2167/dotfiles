@@ -110,9 +110,14 @@ hs.hotkey.bind(hyper, "V", function()
   hs.application.launchOrFocus("Visual Studio Code")
 end)
 
--- Hyper + G → chatGPT Code
+-- Hyper + G → ChatGPT
 hs.hotkey.bind(hyper, "G", function()
   hs.application.launchOrFocus("ChatGPT")
+end)
+
+-- Hyper + T → iTerm
+hs.hotkey.bind(hyper, "T", function()
+  hs.application.launchOrFocus("ITerm")
 end)
 
 -- Show config loaded screen
