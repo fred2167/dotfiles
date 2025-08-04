@@ -60,44 +60,10 @@ for _, binding in ipairs(zoneBindings) do
   end)
 end
 
-
--- Arrow keys: Move current window to left or right half of current screen
-local function moveWindowTo(side)
-  local win = hs.window.focusedWindow()
-  if not win then return end
-  local screen = win:screen()
-  local frame = screen:frame()
-  local newFrame = win:frame()
-
-  if side == "left" then
-    newFrame.x = frame.x
-    newFrame.w = frame.w / 2
-  elseif side == "right" then
-    newFrame.x = frame.x + frame.w / 2
-    newFrame.w = frame.w / 2
-  end
-
-  newFrame.y = frame.y
-  newFrame.h = frame.h
-  win:setFrame(newFrame)
-end
-hs.hotkey.bind(hyper, "left", function() moveWindowTo("left") end)
-hs.hotkey.bind(hyper, "right", function() moveWindowTo("right") end)
-
 -- Move window to the next display
 hs.hotkey.bind(hyper, "N", function()
   local win = hs.window.focusedWindow()
   win:moveToScreen(win:screen():next())
-end)
-
--- FInd mouse pointer on screen
-hs.hotkey.bind(hyper, "M", function()
-  local pos = hs.mouse.getAbsolutePosition()
-  local circle = hs.drawing.circle(hs.geometry.rect(pos.x - 40, pos.y - 40, 80, 80))
-  circle:setStrokeColor({red=1,green=0,blue=0,alpha=0.9})
-  circle:setStrokeWidth(4)
-  circle:show()
-  hs.timer.doAfter(0.6, function() circle:delete() end)
 end)
 
 -- Hyper + C → Google Chrome
