@@ -5,6 +5,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+HISTFILE="$HOME/.zsh_history" # Defines the path to your history file
+HISTSIZE=10000                 # Maximum number of history entries in memory
+SAVEHIST=10000                 # Maximum number of history entries saved to file
+setopt appendhistory           # Appends new history entries to the history file
+setopt extended_history        # Saves timestamps with history entries
+setopt inc_append_history      # Appends history to file immediately after each command
+setopt share_history           # Shares history between multiple active Zsh sessions
+
 DOTFILES=$HOME/dotfiles
 
 # add local bin to PATH
