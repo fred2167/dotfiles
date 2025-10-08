@@ -45,6 +45,7 @@
     - exa
     - bat
     - direnv
+    - nvtop
   - link:
       ~/.local/bin/delta: tools/bin/delta
   - shell:
