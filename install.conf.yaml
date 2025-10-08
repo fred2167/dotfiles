@@ -44,6 +44,7 @@
     - jq
     - exa
     - bat
+    - direnv
   - link:
       ~/.local/bin/delta: tools/bin/delta
   - shell:
