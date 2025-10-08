@@ -1,0 +1,8 @@
+zsh
+ripgrep
+fzf
+fd-find
+bat
+tldr
+zoxide
+exa
