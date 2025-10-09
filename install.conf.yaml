@@ -46,6 +46,7 @@
     - bat
     - direnv
     - nvtop
+    - gnuplot
   - link:
       ~/.local/bin/delta: tools/bin/delta
   - shell:
@@ -54,7 +55,7 @@
 
     - description: install zoxide
       command: curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-
+      
 - ifdebian:
     - description: install bat
       command:  sudo dpkg -i tools/deb/bat-musl_0.23.0_amd64.deb
