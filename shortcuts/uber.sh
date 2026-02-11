@@ -39,60 +39,60 @@ then
 	echo -e "`date +"%Y-%m-%d %H:%M:%S"` direnv hooking zsh"
 	eval "$(direnv hook zsh)"
 	port_fowrad_michael_angelo
+
+	jobs(){
+		local ids=()
+		for id in "$@"; do
+			ids+=("{\"uuid\":{\"value\":\"$id\"}}")
+		done
+		local ids_json=$(IFS=,; echo "[${ids[*]}]")
+		yab -s fulfillment-prod-canary \
+		--procedure 'uber.marketplace.fulfillment_gateway.queries.TransportJobQueries/BatchGetTransportJobsWithWaypoints' \
+		--request "{\"transport_job_ids\":$ids_json}" \
+		--peer '127.0.0.1:9999' \
+		--timeout 30000ms \
+		--grpc-max-response-size 20971520
+	}
+
+	offers(){
+		local ids=()
+		for id in "$@"; do
+			ids+=("{\"uuid\":{\"value\":\"$id\"}}")
+		done
+		local ids_json=$(IFS=,; echo "[${ids[*]}]")
+		yab -s fulfillment-prod-canary \
+		--procedure 'uber.marketplace.fulfillment_gateway.queries.OfferQueries/BatchGetOffers' \
+		--request "{\"offer_ids\":$ids_json}" \
+		--peer '127.0.0.1:9999' \
+		--timeout 30000ms \
+		--grpc-max-response-size 20971520
+	}
+
+	vehicles(){
+		local ids=()
+		for id in "$@"; do
+			ids+=("{\"uuid\":{\"value\":\"$id\"}}")
+		done
+		local ids_json=$(IFS=,; echo "[${ids[*]}]")
+		yab -s fulfillment-prod-canary \
+		--procedure 'uber.marketplace.fulfillment_gateway.queries.VehicleQueries/BatchGetVehicleByUUID' \
+		--request "{\"vehicle_ids\":$ids_json}" \
+		--peer '127.0.0.1:9999' \
+		--timeout 30000ms \
+		--grpc-max-response-size 20971520
+	}
+
+	orders(){
+		local ids=()
+		for id in "$@"; do
+			ids+=("{\"uuid\":{\"value\":\"$id\"}}")
+		done
+		local ids_json=$(IFS=,; echo "[${ids[*]}]")
+		yab -s fulfillment-prod-canary \
+		--procedure 'uber.marketplace.fulfillment_gateway.queries.FulfillmentOrderQueries/BatchGetFulfillmentOrdersWithRelatedEntities' \
+		--request "{\"fulfillment_order_ids\":$ids_json}" \
+		--peer '127.0.0.1:9999' \
+		--timeout 30000ms \
+		--grpc-max-response-size 20971520
+	}
 fi
-
-jobs(){
-	local ids=()
-	for id in "$@"; do
-		ids+=("{\"uuid\":{\"value\":\"$id\"}}")
-	done
-	local ids_json=$(IFS=,; echo "[${ids[*]}]")
-	yab -s fulfillment-prod-canary \
-	--procedure 'uber.marketplace.fulfillment_gateway.queries.TransportJobQueries/BatchGetTransportJobsWithWaypoints' \
-	--request "{\"transport_job_ids\":$ids_json}" \
-	--peer '127.0.0.1:9999' \
-	--timeout 30000ms \
-	--grpc-max-response-size 20971520
-}
-
-offers(){
-	local ids=()
-	for id in "$@"; do
-		ids+=("{\"uuid\":{\"value\":\"$id\"}}")
-	done
-	local ids_json=$(IFS=,; echo "[${ids[*]}]")
-	yab -s fulfillment-prod-canary \
-	--procedure 'uber.marketplace.fulfillment_gateway.queries.OfferQueries/BatchGetOffers' \
-	--request "{\"offer_ids\":$ids_json}" \
-	--peer '127.0.0.1:9999' \
-	--timeout 30000ms \
-	--grpc-max-response-size 20971520
-}
-
-vehicles(){
-	local ids=()
-	for id in "$@"; do
-		ids+=("{\"uuid\":{\"value\":\"$id\"}}")
-	done
-	local ids_json=$(IFS=,; echo "[${ids[*]}]")
-	yab -s fulfillment-prod-canary \
-	--procedure 'uber.marketplace.fulfillment_gateway.queries.VehicleQueries/BatchGetVehicleByUUID' \
-	--request "{\"vehicle_ids\":$ids_json}" \
-	--peer '127.0.0.1:9999' \
-	--timeout 30000ms \
-	--grpc-max-response-size 20971520
-}
-
-orders(){
-	local ids=()
-	for id in "$@"; do
-		ids+=("{\"uuid\":{\"value\":\"$id\"}}")
-	done
-	local ids_json=$(IFS=,; echo "[${ids[*]}]")
-	yab -s fulfillment-prod-canary \
-	--procedure 'uber.marketplace.fulfillment_gateway.queries.FulfillmentOrderQueries/BatchGetFulfillmentOrdersWithRelatedEntities' \
-	--request "{\"fulfillment_order_ids\":$ids_json}" \
-	--peer '127.0.0.1:9999' \
-	--timeout 30000ms \
-	--grpc-max-response-size 20971520
-}
