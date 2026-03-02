@@ -1,0 +1,59 @@
+{
+  "apiKeyHelper": "/home/user/.local/share/aifx/bin/claude-genai-token-helper",
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true
+  },
+  "fastMode": false,
+  "otelHeadersHelper": "/home/user/.local/share/aifx/bin/claude-telemetry-token-helper",
+  "permissions": {
+    "allow": [
+      "mcp__monorepo-experts-mcp-server__generate_standard_go_mocks",
+      "mcp__monorepo-experts-mcp-server__generate_glue_go_mocks",
+      "mcp__monorepo-experts-mcp-server__update_build_files",
+      "mcp__monorepo-experts-mcp-server__get_coverage_report",
+      "Bash(cat)",
+      "Bash(cat :*)",
+      "Bash(ls)",
+      "Bash(ls :*)",
+      "Bash(head :*)",
+      "Bash(tail :*)",
+      "Bash(grep :*)",
+      "Bash(find :*)",
+      "Bash(tree)",
+      "Bash(tree :*)",
+      "Bash(pwd)",
+      "Bash(echo :*)",
+      "Bash(which :*)",
+      "Bash(wc :*)",
+      "Bash(diff :*)",
+      "Bash(file :*)"
+    ]
+  },
+  "statusLine": {
+    "command": "bash /home/user/.claude/statusline-command.sh",
+    "type": "command"
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /home/user/.claude/notify.sh"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "permission_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /home/user/.claude/permission-notify.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
