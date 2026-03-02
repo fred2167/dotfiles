@@ -25,7 +25,7 @@
     ~/.zshrc: zsh/.zshrc
     ~/.vimrc: config/.vimrc
     ~/.jq: config/.jq
-    ~/.claude/CLAUDE.md: agents/CLAUDE.md
+    ~/.claude: agents/.claude
 
 - ifmacos:
   - shell:
