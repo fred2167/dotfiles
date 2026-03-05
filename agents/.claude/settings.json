@@ -1,10 +1,5 @@
 {
   "apiKeyHelper": "/home/user/.local/share/aifx/bin/claude-genai-token-helper",
-  "enabledPlugins": {
-    "gopls-lsp@claude-plugins-official": true
-  },
-  "fastMode": false,
-  "otelHeadersHelper": "/home/user/.local/share/aifx/bin/claude-telemetry-token-helper",
   "permissions": {
     "allow": [
       "mcp__monorepo-experts-mcp-server__generate_standard_go_mocks",
@@ -26,24 +21,41 @@
       "Bash(which :*)",
       "Bash(wc :*)",
       "Bash(diff :*)",
-      "Bash(file :*)"
+      "Bash(file :*)",
+      "mcp__sourcegraph-mcp__sg_search",
+      "mcp__sourcegraph-mcp__sg_nls_search",
+      "mcp__sourcegraph-mcp__sg_read_file",
+      "mcp__sourcegraph-mcp__sg_list_files",
+      "mcp__sourcegraph-mcp__sg_list_repos",
+      "mcp__sourcegraph-mcp__sg_commit_search",
+      "mcp__sourcegraph-mcp__sg_diff_search",
+      "mcp__sourcegraph-mcp__sg_compare_revisions",
+      "mcp__usearch-gen-ai-backend__usearchgenaibackend_chat",
+      "mcp__engwiki__confluence_search",
+      "mcp__engwiki__confluence_get_page",
+      "mcp__engwiki__confluence_get_page_children",
+      "mcp__engwiki__confluence_get_comments",
+      "mcp__engwiki__confluence_get_labels",
+      "mcp__engwiki__confluence_search_user",
+      "WebFetch",
+      "Bash(bazel build :*)",
+      "Bash(ufmt :*)",
+      "Bash(bin/coverage :*)",
+      "Bash(cat /tmp/:*)",
+      "Bash(jq :* /tmp/:*)",
+      "Bash(python :* /tmp/:*)",
+      "mcp__queryrunner-mcp__execute_query",
+      "mcp__queryrunner-mcp__check_execution_status",
+      "mcp__queryrunner-mcp__get_execution_results",
+      "mcp__queryrunner-mcp__get_execution_details",
+      "mcp__queryrunner-mcp__list_in_flight_queries",
+      "mcp__queryrunner-mcp__cancel_execution",
+      "mcp__queryrunner-mcp__search_past_queries",
+      "mcp__queryrunner-mcp__list_datasources",
+      "mcp__queryrunner-mcp__get_consumer_queue_count"
     ]
   },
-  "statusLine": {
-    "command": "bash /home/user/.claude/statusline-command.sh",
-    "type": "command"
-  },
   "hooks": {
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash ~/.claude/myscripts/notify.sh"
-          }
-        ]
-      }
-    ],
     "Notification": [
       {
         "matcher": "permission_prompt",
@@ -54,6 +66,26 @@
           }
         ]
       }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/myscripts/notify.sh"
+          }
+        ]
+      }
     ]
-  }
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash /home/user/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true
+  },
+  "otelHeadersHelper": "/home/user/.local/share/aifx/bin/claude-telemetry-token-helper",
+  "fastMode": false,
+  "effortLevel": "medium"
 }
