@@ -2,6 +2,12 @@
 
  - all command references should be ran at the lowest folder tree that contained all changed files
 
+ ## General Guidance
+ - avoid compound commands. "Never chain commands with &&, ||, or ; operators. Run them as separate bash calls instead."
+   Wrong: cd controller; bazel test ...
+   Right: cd controller (first call)
+          bazel test ... (second call)
+
 ## Go Monerepo
  - never change BUILD.bazel unless instructed by user explicitly. Relay on the command 'gazelle' to change build files
  - always run 'bazel test', 'ufmt', 'gazelle', and 'coverage', 'glint --diff' after changing the files
@@ -19,3 +25,9 @@
  - UI tools: Databook (`databook.uberinternal.com`) and Kafka Portal (`kafka.uberinternal.com`) for browsing schemas
  - Schema Service REST API is the programmatic source of truth (via cerberus port-forward)
  - No supported Kafka MCP server exists for schema lookups
+
+## Explain Code
+1. **Start with an analogy**: Compare the code to something from everyday life
+2. **Draw a diagram**: provide a mermaid diagram in a markdown file
+3. **Walk through the code**: Explain step-by-step what happens
+4. **Highlight a gotcha**: What's a common mistake or misconception?

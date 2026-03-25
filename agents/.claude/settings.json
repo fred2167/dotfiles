@@ -1,5 +1,8 @@
 {
   "apiKeyHelper": "/home/user/.local/share/aifx/bin/claude-genai-token-helper",
+  "env": {
+    "ENABLE_TOOL_SEARCH": "false"
+  },
   "permissions": {
     "allow": [
       "mcp__monorepo-experts-mcp-server__generate_standard_go_mocks",
@@ -52,9 +55,43 @@
       "mcp__queryrunner-mcp__cancel_execution",
       "mcp__queryrunner-mcp__search_past_queries",
       "mcp__queryrunner-mcp__list_datasources",
-      "mcp__queryrunner-mcp__get_consumer_queue_count"
-    ]
+      "mcp__queryrunner-mcp__get_consumer_queue_count",
+      "WebSearch",
+      "Bash(tail:*)",
+      "Bash(head:*)",
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(wc:*)",
+      "Skill(uber-dev:wt-list)",
+      "WebFetch(domain:docs.datadoghq.com)",
+      "Bash(aifx mcp:*)",
+      "Bash(jq:*)",
+      "Bash(bazel test:*)",
+      "Bash(ufmt common/validator/vehicletelemetry.go)",
+      "Bash(glint --diff)",
+      "Bash(ufmt mapper/telemetry/)",
+      "Bash(find /home/user/go-code/src/code.uber.internal -type d -name *telemetry*)",
+      "Skill(uber-dev:wt-new)",
+      "mcp__code-mcp__get_phabricator_revision_metadata",
+      "Read(//home/user/go-code/.claude/commands/**)",
+      "Bash(find /home/user/go-code -path *gogoproto/code.uber.internal/data/vehicle/telemetry* -type f)",
+      "Bash(find /home/user/go-code -path *code.uber.internal/data/vehicle* -name *.pb.go)",
+      "Bash(find /home/user/go-code/idl -path *code.uber.internal/data/vehicle/telemetry* -name *.proto)",
+      "Bash(find /home/user/go-code -path */gogoproto/code.uber.internal/data/vehicle/telemetry -type d)",
+      "Bash(find /home/user/go-code -name *.go -path */data/vehicle/telemetry*)",
+      "Bash(find /home/user/go-code/src -name *.go -path *code.uber.internal/data/vehicle*)",
+      "Bash(find /home/user/go-code -path */vendor/gogoproto/code.uber.internal/data/vehicle/telemetry* -name *.go)",
+      "Bash(find /home/user/go-code/src -path */gogoproto/github.com/uber/amd-api/uber/proto/amd/vehicle/v1beta1 -type d)",
+      "Bash(git ls-tree:*)",
+      "Bash(gazelle:*)",
+      "Bash(bazel build:*)",
+      "Bash(ufmt:*)",
+      "Bash(git:*)",
+      "Bash(find /home/user/go-code -type f -path *fulfillment*entitylog* -name *.go)"
+    ],
+    "defaultMode": "plan"
   },
+  "model": "sonnet[1m]",
   "hooks": {
     "Notification": [
       {
@@ -86,6 +123,6 @@
     "gopls-lsp@claude-plugins-official": true
   },
   "otelHeadersHelper": "/home/user/.local/share/aifx/bin/claude-telemetry-token-helper",
-  "fastMode": false,
-  "effortLevel": "medium"
+  "effortLevel": "medium",
+  "fastMode": false
 }
